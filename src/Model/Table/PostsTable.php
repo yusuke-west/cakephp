@@ -44,6 +44,8 @@ class PostsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Users');
     }
 
     /**
@@ -58,26 +60,30 @@ class PostsTable extends Table
             ->integer('id')
             ->allowEmptyString('id', null, 'create');
 
-        $validator
+            $validator
             ->scalar('title')
             ->maxLength('title', 150)
             ->requirePresence('title', 'create')
             ->notEmptyString('title');
 
-        $validator
+            $validator
             ->scalar('description')
             ->requirePresence('description', 'create')
             ->notEmptyString('description');
 
-        $validator
+            $validator
             ->scalar('body')
             ->requirePresence('body', 'create')
             ->notEmptyString('body');
 
-        $validator
+            $validator
             ->boolean('published')
             ->notEmptyString('published');
 
-        return $validator;
+            $validator
+            ->integer('user_id')
+            ->notEmptyString('user_id');
+
+            return $validator;
+        }
     }
-}

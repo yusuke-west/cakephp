@@ -24,6 +24,11 @@ class CreatePosts extends AbstractMigration
             'limit' => 255
         ])
         ->addColumn('body', 'text')
+        ->addColumn('user_id', 'integer', [
+            'default' => 1,
+            'limit' => 11,
+            'null' => false
+        ])
         ->addColumn('published', 'boolean', [
             'default' => false
         ])

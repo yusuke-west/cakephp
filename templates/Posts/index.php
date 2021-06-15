@@ -9,6 +9,7 @@
     <h3><?= h($post->title) ?></h3>
     <p><?= h($post->created->i18nFormat('YYYY年MM月dd日 HH時mm分')) ?></p>
     <?= $this->Text->autoParagraph(h($post->description)) ?>
+    <p><small>投稿者：<?= h($post->user->username) ?></small></p>
     <!-- aタグでボタンを挿入 -->
     <!-- <a href="/Posts/view/<?= $post->id ?>" class="button" >記事を読む</a> -->
     <?= $this->HTML->link('記事の詳細',[

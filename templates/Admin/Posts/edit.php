@@ -25,6 +25,7 @@
                     echo $this->Form->control('title');
                     echo $this->Form->control('description');
                     echo $this->Form->control('body');
+                    echo $this->Form->control('user_id');
                     echo $this->Form->control('published');
                 ?>
             </fieldset>

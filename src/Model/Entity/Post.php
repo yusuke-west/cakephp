@@ -31,6 +31,7 @@ class Post extends Entity
         'title' => true,
         'description' => true,
         'body' => true,
+        'user_id' => true,
         'published' => true,
         'created' => true,
         'modified' => true,
